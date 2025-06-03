@@ -1,0 +1,31 @@
+{
+  "FURTHERV-EFFECT-EXPIRATION": {
+    "ExpireOn": {
+      "Label": "Expiration Trigger",
+      "Hint": "Determines when this effect automatically expires."
+    },
+    "Trigger": {
+      "TIME": {
+        "GroupName": "Time",
+        "DurationExceeded": "When Duration is Exceeded"
+      },
+      "COMBAT": {
+        "GroupName": "Combat",
+        "CombatStart": "At Combat Start",
+        "CombatEnd": "At Combat End",
+        "NextTargetTurnStart": "Start of Target's next Turn",
+        "NextTargetTurnEnd": "End of Target's next Turn",
+        "NextSourceTurnStart": "Start of Source's next Turn",
+        "NextSourceTurnEnd": "End of Source's next Turn"
+      },
+      "SYSTEM": {
+        "DND5E": {
+          "GroupName": "D&D 5e",
+          "ShortRest": "After a Short Rest",
+          "LongRest": "After a Long Rest",
+          "NewDay": "At the Start of a New Day"
+        }
+      }
+    }
+  }
+}
