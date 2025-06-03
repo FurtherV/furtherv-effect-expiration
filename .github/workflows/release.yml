@@ -1,0 +1,44 @@
+# This is not working for a LOT of reasons. First %config.id% is not replaced inside the module.json. Second github.repository includes user name which obviously is not part of our folder structure
+
+name: Release Creation via Badger Den
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js 20.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20.x
+
+      - run: npm ci
+      - run: npm run build -- --config-version "${{github.event.release.tag_name}}"
+
+      # Create a release for this specific version
+      - name: Update Release with Files
+        if: env.SKIP_RELEASE != 'true'
+        id: create_version_release
+        uses: ncipollo/release-action@v1.12.0
+        with:
+          allowUpdates: true # Set this to false if you want to prevent updating existing releases
+          name: ${{ github.event.release.name }}
+          draft: false
+          prerelease: false
+          token: ${{ secrets.GITHUB_TOKEN }}
+          artifacts: './dist/${{github.repository}}/module.json, ./dist/module.zip'
+          tag: ${{ github.event.release.tag_name }}
+          body: ${{ github.event.release.body }}
+
+      - run: cat dist/${{github.repository}}/module.json
+      - run: ls -A
+      - run: ls dist -A
