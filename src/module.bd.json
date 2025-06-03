@@ -1,0 +1,53 @@
+{
+  "id": "furtherv-effect-expiration",
+  "version": "12.1.0.0",
+  "title": "FurtherV's Active Effect Expiration",
+  "description": "Automates active effect expiration with configurable triggers. System Agnostic with explicit support for the D&D 5th Edition System.",
+  "projectUrl": "https://github.com/FurtherV/furtherv-effect-expiration",
+  "entryPoints": {
+    "main": "module.mjs",
+    "lang": "static/lang/**",
+    "templates": "templates"
+  },
+  "dest": "../dist",
+  "static": ["static"],
+  "profile": {
+    "dev": {
+      "compress": false,
+      "sourcemaps": true,
+      "clean": false,
+      "hmr": true,
+      "entryPoints": {
+        "main": ["debug.mjs"]
+      }
+    },
+    "release": {
+      "compress": true,
+      "sourcemaps": false,
+      "clean": true,
+      "hmr": false,
+      "package": {
+        "create": false,
+        "protected": false,
+        "name": "module",
+        "manifest": "https://github.com/FurtherV/furtherv-effect-expiration/releases/latest/download/module.json",
+        "download": "https://github.com/FurtherV/furtherv-effect-expiration/releases/download/%config.version%/module.zip"
+      }
+    }
+  },
+  "dependencies": {
+    "core": ["13", "13", "13"],
+    "systems": {
+      "dnd5e": ["5.0.0", "5.0.3", "5.9.9"]
+    }
+  },
+  "authors": [
+    {
+      "name": "FurtherV",
+      "url": "https://github.com/FurtherV"
+    }
+  ],
+  "flags": {},
+  "socket": false,
+  "storage": false
+}

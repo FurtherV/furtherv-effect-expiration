@@ -1,0 +1,21 @@
+<div class="{{MODULE_ID}} expiration-card">
+  <section class="card-header">
+    <div class="card-img">
+      <img src="{{effect.img}}" alt="{{effect.name}}">
+      <div class="vl"></div>
+      <img src="{{target.img}}" alt="{{target.name}}">
+    </div>
+    <p>{{localize (concat I18N_ID ".ExpirationMessage.Description") effect=effect.link target=target.link}}</p>
+    <p>{{localize (concat I18N_ID ".ExpirationMessage.Trigger") trigger=reason}}</p>
+  </section>
+  <section class="card-buttons">
+    <button type="button" data-action="delete">
+      <i class="fas fa-trash"></i>
+      {{localize (concat I18N_ID ".ExpirationMessage.Expire")}}
+    </button>
+    <button type="button" data-action="undo">
+      <i class="fas fa-undo"></i>
+      {{localize (concat I18N_ID ".ExpirationMessage.Undo")}}
+    </button>
+  </section>
+</div>

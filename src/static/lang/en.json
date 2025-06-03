@@ -1,0 +1,37 @@
+{
+  "FURTHERV-EFFECT-EXPIRATION": {
+    "ExpirationMessage": {
+      "Description": "{effect} on {target} has expired.",
+      "Trigger": "Trigger: {trigger}",
+      "Expire": "Expire",
+      "Undo": "Restore"
+    },
+    "ExpireOn": {
+      "Label": "Expiration Trigger",
+      "Hint": "Determines when this effect automatically expires."
+    },
+    "Trigger": {
+      "TIME": {
+        "groupName": "Time",
+        "durationExceeded": "When Duration is Exceeded"
+      },
+      "COMBAT": {
+        "groupName": "Combat",
+        "combatStart": "At Combat Start",
+        "combatEnd": "At Combat End",
+        "nextTargetTurnStart": "Start of Target's next Turn",
+        "nextTargetTurnEnd": "End of Target's next Turn",
+        "nextSourceTurnStart": "Start of Source's next Turn",
+        "nextSourceTurnEnd": "End of Source's next Turn"
+      },
+      "SYSTEM": {
+        "DND5E": {
+          "groupName": "D&D 5e",
+          "shortRest": "After a Short Rest",
+          "longRest": "After a Long Rest",
+          "newDay": "At the Start of a New Day"
+        }
+      }
+    }
+  }
+}
