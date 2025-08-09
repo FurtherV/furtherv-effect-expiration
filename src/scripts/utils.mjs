@@ -1,9 +1,5 @@
 import { EXPIRATION_TYPES, FLAGS, I18N_ID, MODULE_ID, MODULE_TITLE, TEMPLATE_FOLDER } from "./constants.mjs";
 
-/* -------------------------------------------- */
-/*  Logging                                     */
-/* -------------------------------------------- */
-
 /**
  * Logs a styled console message with the module title as prefix.
  *
@@ -22,9 +18,7 @@ export function log(message, { color = "#0b8000", extras = [], level = "log" } =
   );
 }
 
-/* -------------------------------------------- */
-/*  Effect Expiration Utilities                 */
-/* -------------------------------------------- */
+/* -------------------------------------------------- */
 
 /**
  * Retrieves the expiration trigger types for a given effect.
@@ -38,6 +32,8 @@ export function getEffectExpirationTypes(effect) {
   ];
 }
 
+/* -------------------------------------------------- */
+
 /**
  * Checks whether the effect should expire on a given type of expiration trigger.
  *
@@ -48,6 +44,8 @@ export function getEffectExpirationTypes(effect) {
 export function effectShouldExpireOn(effect, expirationType) {
   return getEffectExpirationTypes(effect).includes(expirationType);
 }
+
+/* -------------------------------------------------- */
 
 /**
  * Determines if an effect is temporary, excluding certain default types.
@@ -70,8 +68,10 @@ export function isEffectTemporary(effect) {
   return (duration > 0) || (expirationTypes.length > 0);
 }
 
+/* -------------------------------------------------- */
+
 /**
- * Handles expiration of an effect, logging and displaying a message.
+ * Expire an active effect, prompting with a Chat Message.
  *
  * @param {ActiveEffect} effect - The expired effect.
  * @param {string} reason - The reason for expiration.
@@ -95,9 +95,7 @@ export async function expireEffect(effect, reason) {
   });
 }
 
-/* -------------------------------------------- */
-/*  Helpers                                     */
-/* -------------------------------------------- */
+/* -------------------------------------------------- */
 
 /**
  * Converts a camelCase string to PascalCase.
@@ -109,6 +107,8 @@ export function camelToPascal(str) {
   if (!str) return "";
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
+
+/* -------------------------------------------------- */
 
 /**
  * Attempts to extract the originating Actor from an ActiveEffect's origin.

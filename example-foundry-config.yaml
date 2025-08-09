@@ -1,2 +1,3 @@
-installPath: ""
-userdataPath: ""
+# Copy this file and rename it to "foundry-config.yaml"
+installPath: "" # Root of your FoundryVTT install
+userdataPath: "" # Root of your FoundryVTT userdata folder

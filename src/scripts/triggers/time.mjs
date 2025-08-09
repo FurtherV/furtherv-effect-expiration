@@ -2,8 +2,10 @@ import { EXPIRATION_TYPES } from "../constants.mjs";
 import { effectShouldExpireOn, expireEffect, isEffectTemporary } from "../utils.mjs";
 
 export default function init() {
-  Hooks.on("updateWorldTime", onUpdateWorldTime);
+  Hooks.on("updateWorldTime", updateWorldTime);
 }
+
+/* -------------------------------------------------- */
 
 /**
  * @param {number} newWorldTime
@@ -11,7 +13,7 @@ export default function init() {
  * @param {Object} options
  * @param {number} userId
  */
-function onUpdateWorldTime(newWorldTime, timeDelta, options, userId) {
+function updateWorldTime(newWorldTime, timeDelta, options, userId) {
   // Only the active GM processes
   if (!game.users.activeGM?.isSelf) return;
 

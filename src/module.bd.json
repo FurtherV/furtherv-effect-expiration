@@ -5,7 +5,7 @@
   "description": "Automates active effect expiration with configurable triggers. System Agnostic with explicit support for the D&D 5th Edition System.",
   "projectUrl": "https://github.com/FurtherV/furtherv-effect-expiration",
   "entryPoints": {
-    "main": "module.mjs",
+    "main": "scripts/module.mjs",
     "lang": "static/lang/**",
     "templates": "templates"
   },
@@ -18,7 +18,7 @@
       "clean": false,
       "hmr": true,
       "entryPoints": {
-        "main": ["debug.mjs"]
+        "main": ["scripts/debug.mjs"]
       }
     },
     "release": {

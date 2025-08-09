@@ -2,20 +2,17 @@ import { EXPIRATION_TYPES, FLAGS, I18N_ID, MODULE_ID } from "../constants.mjs";
 import { camelToPascal, getEffectExpirationTypes } from "../utils.mjs";
 
 export default function init() {
-  Hooks.on("renderActiveEffectConfig", onRenderActiveEffectConfig);
+  Hooks.on("renderActiveEffectConfig", renderActiveEffectConfig);
 }
+
+/* -------------------------------------------------- */
 
 /**
  * @param {Application} app
- * @param {HTMLElement | JQuery} jqOrHtml
+ * @param {HTMLElement} jqOrHtml
  * @param {Object} data
  */
-function onRenderActiveEffectConfig(app, jqOrHtml, data) {
-  /**
-   * @type {HTMLElement}
-   */
-  const html = jqOrHtml instanceof HTMLElement ? jqOrHtml : jqOrHtml[0];
-
+function renderActiveEffectConfig(app, html, data) {
   // Get the tab we want to insert our stuff in
   const durationSection = html.querySelector(".tab[data-tab='duration']");
 

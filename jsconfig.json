@@ -16,8 +16,8 @@
     "**/node_modules/*"
   ],
   "include": [
-    "src/module.mjs",
-    "src/debug.mjs",
+    "src/scripts/module.mjs",
+    "src/scripts/debug.mjs",
     "src/**/*.mjs",
     "foundry/client/client.mjs",
     "global.d.ts"

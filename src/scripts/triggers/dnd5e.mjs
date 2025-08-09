@@ -2,10 +2,17 @@ import { EXPIRATION_TYPES } from "../constants.mjs";
 import { effectShouldExpireOn, expireEffect, isEffectTemporary } from "../utils.mjs";
 
 export default function init() {
-  Hooks.on("dnd5e.restCompleted", onRestCompleted);
+  Hooks.on("dnd5e.restCompleted", restCompleted);
 }
 
-function onRestCompleted(actor, result, config) {
+/* -------------------------------------------------- */
+
+/**
+ * @param {Actor} actor
+ * @param {Object} result
+ * @param {Object} config
+ */
+function restCompleted(actor, result, config) {
   console.debug({ actor, result, config });
 
   const isShortRest = !result.longRest;
